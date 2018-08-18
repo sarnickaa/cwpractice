@@ -15,7 +15,9 @@
 // toUnderscore(1);
 
 function toUnderscore(string) {
-  if (string.length === 1) {
+  if (typeof string !== 'string') {
+    return `${string}`
+  } else if (string.length === 1) {
     return string.toLowerCase()
   } else {
    return string.split(/(?=[A-Z])/).join("_").toLowerCase()
